@@ -1,10 +1,32 @@
-<h1>投稿一覧</h1>
+<h1>Books</h1>
 
 <% @lists.each do |list| %>
 
-  <p>タイトル</p>
+  <p>Title</p>
   <span>
-    <%= link_to list.title, list_path(list.id) %>
+    <%= list.title %>
   </span>
   
+  <p>Body</p>
+  <span>
+    <%= list.title %>
+  </span>
+  
+  <%= link_to "Show", list_path(list) %>
+  <%= link_to "Edit", edit_list_path(list.id) %>
+  <%= link_to "Destroy", list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %>
+    
+  
+  
+<% end %>
+
+<h2>New book</h2>
+<%= form_with model: @list, url: '/list.id', method: :post do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+	
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+	
+  <%= f.submit 'Create Book' %>
 <% end %>
