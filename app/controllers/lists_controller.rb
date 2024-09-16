@@ -35,14 +35,23 @@ class ListsController < ApplicationController
   def update
     list = List.find(params[:id])
     list.update(list_params)
-    redirect_to list_path(list.id)  
+    if list.update(list_params)
+      flash[:notice] = "Book was successfully updated."
+      redirect_to list_path(list.id)  
+    end
   end
   
   def destroy
     list = List.find(params[:id])
     list.destroy
+    
+    if list.destroy
+      #フラッシュメッセージ
+      flash[:notice] = "Book was successfully destroyed."
+      redirect_to '/lists'
+    end
     #投稿一覧画面へ
-    redirect_to '/lists'
+    
   end
   
   private

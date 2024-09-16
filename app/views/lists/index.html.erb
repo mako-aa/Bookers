@@ -1,12 +1,16 @@
+<div class="flash-message">
+    <%= flash[:notice] %>
+</div>
 <h1>Books</h1>
 
 <body>
   <table>
-    <% @lists.each do |list| %>
+
     <tr>
       <th class="nav-list">Title</th>
       <th class="nav-list">Body</th>
     </tr>
+    <% @lists.each do |list| %>
     <tr>
       <td class="table-list"><%= list.title %></td>
       <td class="table-list"><%= list.body %></td>

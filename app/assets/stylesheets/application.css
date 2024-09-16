@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+/*homes*/
+.homes-text {
+  margin: 30px;  
+}
+
+.homes-link {
+  margin: 30px;
+}
+
 /*indexのcss*/
 table {
   padding: 5px;
